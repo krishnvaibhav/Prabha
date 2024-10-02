@@ -1,0 +1,40 @@
+.footer{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.footer-content{
+  padding: 1rem;
+  margin: 1rem;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between   ;
+}
+
+@media(max-width:500px){
+  .footer-content{
+    flex-direction: column;
+  }
+}
+
+.divider{
+  border-width: 1px;
+  width: 90%;
+  margin: 1.5rem;
+}
+
+.social{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* padding: 1rem; */
+  /* margin: 1rem; */
+}
+
+.social *{
+  margin: 10px;
+}

@@ -1,0 +1,64 @@
+/* Container for the icon grid */
+.icon-grid-container {
+  background-color: var(--dl-color-theme-accent3); /* Soft lavender background */
+  padding: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  
+  /* Grid layout for the icons */
+  .icon-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    grid-gap: 40px; /* Spacing between icons */
+  }
+
+  @media(max-width:1100px){
+    .icon-grid{
+      grid-template-columns: repeat(3, 1fr); 
+    }
+  }
+
+  @media(max-width:750px){
+    .icon-grid{
+      grid-template-columns: repeat(2, 1fr); 
+    }
+  }
+
+  
+  /* Styling for each icon item */
+  .icon-item {
+    width: 200px; /* Adjust icon size */
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2C3E50; /* Deep navy blue for the logo boxes */
+    color: #FFFFFF;
+    border: 2px solid #BDC3C7; /* Silver gray border */
+    transition: all 0.3s ease;
+    border-radius: 10px; /* Rounded corners */
+  }
+  
+  /* Hover effect for icons */
+  .icon-item:hover {
+    transform: scale(1.1); /* Scale icon on hover */
+  }
+  
+  /* Styling for the icon itself */
+  .icon-image {
+    font-size: 40px; /* Icon size (adjust as needed) */
+    color: #f0f0f0; /* Icon color (white-ish) */
+  }
+
+    
+  @media(max-width:550px){
+    .icon-item{
+      width: 150px;
+      height: 150px;
+    }
+  }
+  
+  
