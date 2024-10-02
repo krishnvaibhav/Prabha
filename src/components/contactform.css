@@ -108,6 +108,10 @@ width: 60%;
     pointer-events: none;
 }
 
+.maps{
+    border: 5px solid rgb(255, 255, 255);
+}   
+
 @media(max-width:1100px) {
     .contact{
         flex-direction: column;
@@ -128,6 +132,7 @@ width: 60%;
         display: flex;
         align-items: center;
         justify-content: center;
+        border: none    ;
     }
 
     .google-map{
@@ -138,6 +143,3 @@ width: 60%;
     
 }
 
-.maps{
-    border: 5px solid rgb(255, 255, 255);
-}

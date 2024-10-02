@@ -16,7 +16,7 @@ export default function AboutContent() {
       // }}
     >
       <h2 className="thq-heading-3 center">Our Story</h2>
-      <MotionWrapper variants={fadeInUp}>
+      <MotionWrapper variants={fadeInUp} viewportAmount={0.2}>
         <section className="about-section">
           <div className="about-founder about-content">
             <h3 className="thq-heading-3">About The Founder</h3>
@@ -54,7 +54,7 @@ export default function AboutContent() {
           </div>
         </section>
       </MotionWrapper>
-      <MotionWrapper variants={fadeInUp}>
+      <MotionWrapper viewportAmount={0.3} variants={fadeInUp}>
         <section className="about-section">
           <div className="about-content-img">
             <img src={prabha1} alt="Team" className="about-image" />
@@ -80,7 +80,7 @@ export default function AboutContent() {
           </div>
         </section>
       </MotionWrapper>
-      <MotionWrapper variants={fadeInUp}>
+      <MotionWrapper viewportAmount={0.4} variants={fadeInUp}>
         <section className="about-section">
           <div className="about-founder about-content">
             <h3 className="thq-heading-3">Building on Tradition</h3>

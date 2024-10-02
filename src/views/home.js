@@ -1,15 +1,11 @@
 // src/pages/Home.js
 import React from "react";
 import { Helmet } from "react-helmet";
-import Navbar from "../components/navbar";
 import Hero from "../components/hero";
-import Features1 from "../components/features1";
-import CTA from "../components/cta";
 import Testimonial from "../components/testimonial";
 import Contact from "../components/contact";
 import Footer from "../components/footer";
 import "./home.css";
-import OurServices from "../components/OurServices";
 import NewNavbar from "../components/newNav";
 import IconGrid from "../components/CompaniesWorked";
 import { WhatsApp } from "@mui/icons-material";

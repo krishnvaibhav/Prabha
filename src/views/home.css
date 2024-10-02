@@ -1,7 +1,7 @@
 .fixed-bottom-right {
   position: fixed;
-  bottom: 20px;  /* Distance from bottom */
-  right: 20px;   /* Distance from right */
+  bottom: 20px;  
+  right: 20px;  
   padding: 10px 20px;
   color: white;
   border: none;

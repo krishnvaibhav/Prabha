@@ -5,23 +5,80 @@ import DarkModeIcon from "@mui/icons-material/DarkMode";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import SearchIcon from "@mui/icons-material/Search";
 import MenuIcon from "@mui/icons-material/Menu";
-
-import { Fab, IconButton, InputAdornment, TextField } from "@mui/material";
-import { NavLink } from "react-router-dom";
+import {
+  Fab,
+  IconButton,
+  InputAdornment,
+  TextField,
+  Drawer,
+} from "@mui/material";
+import { Link, NavLink } from "react-router-dom";
+import { WhatsApp } from "@mui/icons-material";
 
 const NavigationBar = (props) => {
   const [matches, setMatches] = useState(
     window.matchMedia("(min-width: 1000px)").matches
   );
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
   useEffect(() => {
     window
       .matchMedia("(min-width: 1000px)")
       .addEventListener("change", (e) => setMatches(e.matches));
   }, []);
+
   const handleSearch = () => {
     console.log("Search button clicked");
   };
+
+  const toggleDrawer = (open) => (event) => {
+    if (
+      event &&
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+    setDrawerOpen(open);
+  };
+
+  const list = () => (
+    <div className="drawerContent">
+      <div className="item">
+        <NavLink to={"/"}>
+          <h3 className="thq-body-3">Home</h3>
+        </NavLink>
+      </div>
+      <div className="item">
+        <NavLink to={"/about"}>
+          <h3 className="thq-body-3">About</h3>
+        </NavLink>{" "}
+      </div>
+      <div className="item">
+        <NavLink to={"/services"}>
+          <h3 className="thq-body-3">Services</h3>
+        </NavLink>{" "}
+      </div>
+      <div className="item">
+        <NavLink to={"/contact"}>
+          <h3 className="thq-body-3">Contact Us</h3>
+        </NavLink>{" "}
+      </div>
+      <div className="item">
+        <NavLink to={"/Establishments"}>
+          <h3 className="thq-body-3">Establishments</h3>
+        </NavLink>{" "}
+      </div>
+      <Link to={"https://wa.me/+918281694425"}>
+        <button className="item">
+          <Fab color="primary" aria-label="Contact">
+            <WhatsApp />
+          </Fab>
+        </button>
+      </Link>
+    </div>
+  );
+
   return (
     <div className="navcontainer">
       <div className="navbar-main">
@@ -46,7 +103,7 @@ const NavigationBar = (props) => {
             </span>
             <span className="thq-link thq-body-small">
               <NavLink
-                to="/products"
+                to="/services"
                 className={({ isActive }) => (isActive ? "active-nav" : "")}
               >
                 {props.link3}
@@ -89,11 +146,19 @@ const NavigationBar = (props) => {
           </div>
         )}
         {!matches && (
-          <IconButton aria-label="Menu" sx={{ color: "#080A45" }}>
+          <IconButton
+            aria-label="Menu"
+            onClick={toggleDrawer(true)}
+            sx={{ color: "#080A45" }}
+          >
             <MenuIcon />
           </IconButton>
         )}
       </div>
+
+      <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer(false)}>
+        {list()}
+      </Drawer>
     </div>
   );
 };

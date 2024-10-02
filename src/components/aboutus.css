@@ -83,3 +83,25 @@
   .right-text{
     text-align: right;
   }
+
+  @media (max-width: 1024px) {
+   .about-section{
+    flex-direction: column;
+   }
+
+   .about-section *{
+    padding: 12px;
+    margin: 12px;
+   }
+
+   .about-content{
+    width: 90%;
+   }
+
+   .about-content-img{
+    width: 90%;
+   }
+   .about-founder{
+    text-align: center;
+   }
+  }

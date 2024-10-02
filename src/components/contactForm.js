@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import { Button, TextField } from "@mui/material";
 import GoogleMapReact from "google-map-react";
 import PlaceIcon from "@mui/icons-material/Place";
 import "../components/contactform.css";
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({
+  const formData = useRef({
     name: "",
     email: "",
     subject: "",
@@ -14,15 +14,12 @@ const ContactForm = () => {
 
   const handleInputChange = (e) => {
     const { id, value } = e.target;
-    setFormData({
-      ...formData,
-      [id]: value,
-    });
+    formData.current[id] = value; // Update the ref value directly
   };
 
   const handleClick = () => {
     const phoneNumber = "+918075961210";
-    const { name, email, subject, message } = formData;
+    const { name, email, subject, message } = formData.current; // Access ref value
 
     const whatsappMessage = `Hello, I am ${name}. My email is ${email}. Subject: ${subject}. Message: ${message}`;
 
@@ -85,7 +82,7 @@ const ContactForm = () => {
               label="Name"
               variant="outlined"
               sx={{ width: "45%", background: "white" }}
-              value={formData.name}
+              defaultValue={formData.current.name}
               onChange={handleInputChange} // Handle change for name field
             />
             <TextField
@@ -93,7 +90,7 @@ const ContactForm = () => {
               label="Email"
               variant="outlined"
               sx={{ width: "45%", background: "white" }}
-              value={formData.email}
+              defaultValue={formData.current.email}
               onChange={handleInputChange} // Handle change for email field
             />
           </div>
@@ -103,7 +100,7 @@ const ContactForm = () => {
               label="Subject"
               variant="outlined"
               sx={{ width: "100%", background: "white" }}
-              value={formData.subject}
+              defaultValue={formData.current.subject}
               onChange={handleInputChange} // Handle change for subject field
             />
           </div>
@@ -115,16 +112,16 @@ const ContactForm = () => {
               multiline
               maxRows={4}
               sx={{ width: "100%", background: "white" }}
-              value={formData.message}
+              defaultValue={formData.current.message}
               onChange={handleInputChange} // Handle change for message field
             />
           </div>
           <div className="submit-btn">
             <button
-              class="thq-button-filled hero-button1"
+              className="thq-button-filled hero-button1"
               onClick={handleClick}
             >
-              <span class="thq-body-small">Submit</span>
+              <span className="thq-body-small">Submit</span>
             </button>
           </div>
         </div>
