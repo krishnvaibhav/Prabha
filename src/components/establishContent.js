@@ -22,7 +22,7 @@ export default function EstablishContent() {
       <div className="card-holder">
         <div className="Estcard card card1">
           <img src={img1} alt="" />
-          <h2 className="thq-heading2">Prabha Press</h2>
+          <h2 className="thq-heading2">Prabha Prints and Sales</h2>
           <p className="thq-heading-small">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
             nemo sapiente aliquid, aliquam a modi eius ut animi voluptate

@@ -3,6 +3,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import "./contact.css";
+import { Link } from "react-router-dom";
 
 const Contact = (props) => {
   return (
@@ -25,12 +26,16 @@ const Contact = (props) => {
                 <h3 className="contact-text4 thq-heading-3">Email</h3>
                 <p className="contact-text5 thq-body-large">{props.content3}</p>
               </div>
-              <span className="contact-email thq-body-small">
-                {props.email1}
-              </span>
-              <span className="contact-email thq-body-small">
-                {props.email2}
-              </span>
+              <Link to={`mailto:${props.email1}`}>
+                <span className="contact-email thq-body-small">
+                  {props.email1}
+                </span>
+              </Link>
+              <Link to={`mailto:${props.email2}`}>
+                <span className="contact-email thq-body-small">
+                  {props.email2}
+                </span>
+              </Link>
             </div>
           </div>
           <div className="contact-content4">
@@ -42,12 +47,16 @@ const Contact = (props) => {
                 <h3 className="contact-text6 thq-heading-3">Phone</h3>
                 <p className="contact-text7 thq-body-large">{props.content4}</p>
               </div>
-              <span className="contact-phone thq-body-small">
-                {props.phone1}
-              </span>
-              <span className="contact-phone thq-body-small">
-                {props.phone2}
-              </span>
+              <Link to={"tel:+918281694424"}>
+                <span className="contact-phone thq-body-small">
+                  {props.phone1}
+                </span>
+              </Link>
+              <Link to={"tel:+918281694425"}>
+                <span className="contact-phone thq-body-small">
+                  {props.phone2}
+                </span>
+              </Link>
             </div>
           </div>
           <div className="contact-content6">
